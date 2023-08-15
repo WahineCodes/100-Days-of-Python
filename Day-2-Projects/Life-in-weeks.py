@@ -1,4 +1,6 @@
-#How many days, weeks, months do you have left if you lived until age 90. 
+#A program to calculate how many days, weeks, months do you have left if you lived until age 90. 
+#Practiced: f-strings, int(), input(), creating variables
+
 
 #To obtain users age and make it a int instead of a str
 age = int(input("What is your current age? "))

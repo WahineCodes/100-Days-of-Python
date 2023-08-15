@@ -1,3 +1,6 @@
+#Created a simple BMI Calculator that only accounts for kg and meters. 
+#Practiced: input(), converting to different types (float(), int()), used operators (**)
+
 #Adding the variables for height and weight to obtain user input:
 height = input("enter your height in m: ")
 weight = input("enter your weight in kg: ")
