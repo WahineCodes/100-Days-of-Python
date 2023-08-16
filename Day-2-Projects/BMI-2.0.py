@@ -1,16 +1,21 @@
 '''
 Title: BMI 2.0
-Description: Created a bmi indicator that lets you know your weight/height status based on the 
-             CDC's guidlines on bmi.  
+Description: Created a bmi indicator for adults that lets you know your weight/height 
+              status based on the CDC's guidlines on bmi.  
 Practiced: if,elif,else statements
+
+CDC BMI Guidelines:
+- Below 18.5 = Underweight
+- 18.5 - 24.9 = Healthy Weight
+- 25.0 - 29.9 = Overweight
+- 30.0 and Above - Obese
 '''
 
+#Asks users for height(m) and weight(kg).
 height = float(input("enter your height in m: "))
 weight = float(input("enter your weight in kg: "))
-# 🚨 Don't change the code above 👆
 
-#Write your code below this line 👇
-
+#BMI equation
 bmi = round(weight / (height ** 2))
 
 if bmi <= 18.5:
