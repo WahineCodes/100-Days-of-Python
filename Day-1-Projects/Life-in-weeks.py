@@ -1,3 +1,10 @@
+'''
+Title: Life In Weeks
+Description: Created a program that will determine how many days, weeks, and months you have left if
+             you live until the age of 90. 
+Utilized: f-string, int(), input(), operator (*, -)
+'''
+
 #A program to calculate how many days, weeks, months do you have left if you lived until age 90. 
 #Practiced: f-strings, int(), input(), creating variables
 

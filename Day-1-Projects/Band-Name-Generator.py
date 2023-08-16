@@ -1,5 +1,9 @@
-#Creating a band name generator by combining the name of the inputted city and pet name. 
-#Practiced using: print(), input(), creating a variable, concatenation using the + symbol
+'''
+Title: Band Name Generator
+Description: Created a band name generator which combines user input of city and pet names.
+Utilized: print(), input(), variables, concatenation using the + operator. 
+'''
+
 
 #Created a greeting the program.
 print("Welcome to the band name generator!")
