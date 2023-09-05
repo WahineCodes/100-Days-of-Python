@@ -1,3 +1,9 @@
+'''
+TITLE: Guess the Number
+DESCRIPTION: The goal is to guess the right number. Number will range from 1 to 100.
+       User has a certain amount of attempts depending on selected level of difficulty.
+'''
+
 import random
 
 logo = '''                                                                      

@@ -1,3 +1,12 @@
+'''
+TITLE: Higher or Lower
+DESCRIPTION: User will guess which person has a higher follower count on instagram. 
+       As the user guesses right their score will increase. If they gues wrong the 
+       game ends and their final score is revealed. 
+
+       This version is a longer documentation of the game. 
+'''
+
 import random
 
 import os
