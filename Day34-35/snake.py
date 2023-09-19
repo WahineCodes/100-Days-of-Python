@@ -8,6 +8,7 @@ DOWN = 270
 LEFT = 180
 RIGHT = 0
 
+
 class Snake:
     
     def __init__(self):
@@ -24,6 +25,10 @@ class Snake:
             new_snake.penup()
             new_snake.goto(position)
             self.all_snakes.append(new_snake)
+
+    def extend_tail(self):
+        #add a new segment to the snake.
+    
 
     def move(self):
         #Logic: have each snake take the place of the previous one.
