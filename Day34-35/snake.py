@@ -20,14 +20,19 @@ class Snake:
     #Creates three snakes with unique positions
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            new_snake = Turtle(shape="square")
-            new_snake.color("white")
-            new_snake.penup()
-            new_snake.goto(position)
-            self.all_snakes.append(new_snake)
+            self.add_segment(position)
+    
 
-    def extend_tail(self):
-        #add a new segment to the snake.
+    def add_segment(self, position):
+        new_snake = Turtle(shape="square")
+        new_snake.color("white")
+        new_snake.penup()
+        new_snake.goto(position)
+        self.all_snakes.append(new_snake)
+
+    def extend(self):
+        #adds a new segment to the snake
+        self.add_segment(self.all_snakes[-1].position())
     
 
     def move(self):
