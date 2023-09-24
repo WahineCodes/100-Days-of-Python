@@ -31,7 +31,7 @@ while game_is_on:
 
     #Turtle collision with a obstacle
     for obstacle in obstacles.all_obstacles:
-        if obstacle.distance(player) < 5 or player.distance(obstacle) < 5:
+        if obstacle.distance(player) < 20:
             scoreboard.game_over()
             game_is_on = False
 
