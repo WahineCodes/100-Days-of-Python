@@ -19,7 +19,8 @@ game_on = True
 
 while len(guessed_states) < 50:
     #Creates a pop-up window with question and input box
-    answer_state = (screen.textinput(title = f"{len(guessed_states)}/50 State Correct", prompt = "What's another state's name?")).title()
+    answer_state = (screen.textinput(title = f"{len(guessed_states)}/50 State Correct", 
+                    prompt = "What's another state's name?")).title()
     Font = ("Courier", 24, "normal")
 
     #Exit will break out of the loop and end the game
