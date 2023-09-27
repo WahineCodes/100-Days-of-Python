@@ -28,4 +28,5 @@ data = pandas.read_csv("Day41/weather_data.csv")
 # print(data)
 
 #It takes the first row and then applies it to the rest
+#It also just needs that one name to find the equivalent data
 print(data["temp"])
