@@ -11,6 +11,9 @@ window.title("My First GUI Program")
 #Size of window
 window.minsize(width=500, height=300)
 
+#Adds space around the program. Can do the same for individual widgets
+window.config(padx=50, pady=50)
+
 #Adds text
 my_label = Label(text="I Am a Label", font=("Arial", 24, "bold"))
 
