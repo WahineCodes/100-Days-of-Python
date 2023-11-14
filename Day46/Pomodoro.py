@@ -12,21 +12,26 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 
+#Starts out as a variable with nothing, until called in the mechanisms below
+timer = None
+
 # ---------------------------- TIMER RESET ------------------------------- # 
 def reset_timer():
-    pass
+    window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text = "00:00")
+    title_label.config(text="Timer")
+    check_marks.config(text = "")
+    global reps 
+    reps = 0
+
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global reps
     reps += 1
 
-    # work_sec = WORK_MIN * 60
-    # short_break_sec = SHORT_BREAK_MIN * 60
-    # long_break_sec = LONG_BREAK_MIN * 60
-
-    work_sec = WORK_MIN 
-    short_break_sec = SHORT_BREAK_MIN 
-    long_break_sec = LONG_BREAK_MIN 
+    work_sec = WORK_MIN * 60
+    short_break_sec = SHORT_BREAK_MIN * 60
+    long_break_sec = LONG_BREAK_MIN * 60
 
     #If its the 8th rep
     if reps % 8 == 0:
@@ -41,6 +46,7 @@ def start_timer():
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=GREEN)
+        
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -56,9 +62,17 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_minutes}:{count_seconds}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
+
+        #Adds a checkmark each time a work session is completed
+        marks = ""
+        work_sessions = math.floor(reps/2)
+        for _ in range(work_sessions):
+            marks += "✔"
+        check_marks.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -85,7 +99,7 @@ reset_button = Button(text="Reset", highlightthickness=0, highlightbackground=YE
 reset_button.grid(column=2, row=2)
 
 #Check Mark
-check_marks = Label(text="✔", fg=GREEN, bg=YELLOW)
+check_marks = Label(fg=GREEN, bg=YELLOW)
 check_marks.grid(column=1, row=3)
 
 
