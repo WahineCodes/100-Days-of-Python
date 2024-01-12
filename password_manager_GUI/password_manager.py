@@ -41,15 +41,15 @@ email_input.grid(row=2, column=1, columnspan=2)
 password = Label(text="Password:", font=("Arial", 12, "bold"))
 password.grid(row=3, column=0)
 
-password_input = Entry(width=21)
+password_input = Entry(width=18)
 password_input.grid(row=3, column=1)
 
 #Generate Password button
-generator_button = Button(text="Generate Password", command=make_password)
+generator_button = Button(text="Generate Password", command=make_password, width=15)
 generator_button.grid(row=3, column=2)
 
 #Add button
-add_button = Button(text="Add", width=36, command=save_password)
+add_button = Button(text="Add", width=33, command=save_password)
 add_button.grid(row=4, column=1, columnspan=2)
 
 
