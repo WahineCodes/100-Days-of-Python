@@ -15,7 +15,7 @@ def save_password():
 
 window = Tk()
 window.title("Password Manager")
-window.config(padx=20, pady=20)
+window.config(padx=25, pady=50)
 
 #Creates the canvas dimensions and adds the logo
 canvas = Canvas(height=200, width=200)
@@ -24,32 +24,34 @@ canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
 #Website input 
-website = Label(text="Website:", font=("Arial", 12, "bold"))
+website = Label(text="Website:")
 website.grid(row=1, column=0)
 
 website_input = Entry(width=35)
 website_input.grid(row=1, column=1, columnspan=2)
+website_input.focus()
 
 #Email/Username input
-email = Label(text="Email/Username:", font=("Arial", 12, "bold"))
+email = Label(text="Email/Username:")
 email.grid(row=2, column=0)
 
 email_input = Entry(width=35)
 email_input.grid(row=2, column=1, columnspan=2)
+email_input.insert(0, "example@gmail.com")
 
 #Password input
-password = Label(text="Password:", font=("Arial", 12, "bold"))
+password = Label(text="Password:")
 password.grid(row=3, column=0)
 
-password_input = Entry(width=18)
+password_input = Entry(width=21)
 password_input.grid(row=3, column=1)
 
 #Generate Password button
-generator_button = Button(text="Generate Password", command=make_password, width=15)
+generator_button = Button(text="Generate Password", command=make_password)
 generator_button.grid(row=3, column=2)
 
 #Add button
-add_button = Button(text="Add", width=33, command=save_password)
+add_button = Button(text="Add", width=36, command=save_password)
 add_button.grid(row=4, column=1, columnspan=2)
 
 
