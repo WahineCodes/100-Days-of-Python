@@ -1,5 +1,7 @@
 from tkinter import *
 
+#Note: Command + / for = # block of code
+
 # ---------------------------- Global Variables ------------------------------- #
 
 
@@ -8,8 +10,16 @@ def make_password():
     pass
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+#When clicking the add button
 def save_password():
-    pass
+    website = website_input.get()
+    email = email_input.get()
+    password = password_input.get()
+
+    
+    with open("data.txt", "a") as data_file:
+        data_file.write(f"{website} | {email} | {password}")
+        
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -53,6 +63,7 @@ generator_button.grid(row=3, column=2)
 #Add button
 add_button = Button(text="Add", width=36, command=save_password)
 add_button.grid(row=4, column=1, columnspan=2)
+
 
 
 #Must have this for the program to work
