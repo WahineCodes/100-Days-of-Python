@@ -18,7 +18,10 @@ def save_password():
 
     
     with open("data.txt", "a") as data_file:
-        data_file.write(f"{website} | {email} | {password}")
+        data_file.write(f"{website} | {email} | {password}\n")
+        #deleting from 0 character to the end of the entry, so it can take the next entry.
+        website_input.delete(0, END)
+        password_input.delete(0, END)
         
 
 # ---------------------------- UI SETUP ------------------------------- #
