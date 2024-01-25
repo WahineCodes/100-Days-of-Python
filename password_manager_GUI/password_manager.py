@@ -41,7 +41,7 @@ def make_password():
     #Example 2
     password = "".join(password_list)
     
-    print(f"Your password is: {password}")
+    password_input.insert(0, password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 #When clicking the add button
