@@ -56,7 +56,7 @@ def save_password():
         #Standard Dialog - for a pop-up to check details of their inputs.
         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email} \nPassword: {password} \nIs it ok to save?")
         if is_ok: 
-            with open("password_manager_GUI/data.txt", "a") as data_file:
+            with open("Day47-password-manger/data.txt", "a") as data_file:
                 data_file.write(f"{website} | {email} | {password}\n")
 
                 #deleting from character 0 to the end of the entry, for new entries to be entered.
@@ -72,7 +72,7 @@ window.config(padx=25, pady=50)
 
 #Creates the canvas dimensions and adds the logo
 canvas = Canvas(height=200, width=200)
-logo_img = PhotoImage(file='password_manager_GUI/logo.png')
+logo_img = PhotoImage(file='Day47-password-manger/logo.png')
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
