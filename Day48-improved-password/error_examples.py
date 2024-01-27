@@ -1,32 +1,52 @@
 #Example of Catching Exceptions
-try:
-    file = open("Day48-improved-password/a_file.txt")
-    a_dictionary  = {"key": "value"}
-    print(a_dictionary["key"])
 
-#Note: except block will ignore all errors after the first error it finds in try block.
-#to fix that you can specify what type of error except will look for
-except FileNotFoundError:
-    file = open("Day48-improved-password/a_file.txt", "w")
-    file.write("Something")
+#EXAMPLE 1
+# try:
+#     file = open("Day48-improved-password/a_file.txt")
+#     a_dictionary  = {"key": "value"}
+#     print(a_dictionary["key"])
 
-#gets a hold of the error message that was generated from the except error (except KeyError)
-except KeyError as error_message:
-    print(f"The key {error_message} does not exist.")
+# #Note: except block will ignore all errors after the first error it finds in try block.
+# #to fix that you can specify what type of error except will look for
+# except FileNotFoundError:
+#     file = open("Day48-improved-password/a_file.txt", "w")
+#     file.write("Something")
 
-#executes when the try block succeeds and there were no exceptions
-else:
-    content = file.read()
-    print(content)
+# #gets a hold of the error message that was generated from the except error (except KeyError)
+# except KeyError as error_message:
+#     print(f"The key {error_message} does not exist.")
 
-finally:
-    file.close()
-    print("File was closed")
+# #executes when the try block succeeds and there were no exceptions
+# else:
+#     content = file.read()
+#     print(content)
+
+# finally:
+#     file.close()
+#     print("File was closed")
+
+#     #allows us to raise/make our own exceptions
+#     raise TypeError("This is an error that I made up.")
+# - - - - - - - - - - -- - - - -- - - - - 
+
+#EXAMPLE 2
+height = float(input("Height: "))
+weight = int(input("Weight: "))
+
+if height > 3:
+    #raising this error b/c 3m is not a valid height
+    raise ValueError("Human Height should not be over 3 meters.")
+
+bmi = weight / height ** 2
+print(bmi)
+
 
 
 
 
 # - - - - - - - - - - -- - - - -- - - - - 
+#TYPES OF ERRORS
+
 #FileNotFound Error, unable to find/read the file b/c mistake in name or path
 # with open("a_file.txt") as file:
 #     file.read()
