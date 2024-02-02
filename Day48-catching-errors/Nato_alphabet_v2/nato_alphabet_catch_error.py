@@ -5,7 +5,7 @@
 
 import pandas
 
-data = pandas.read_csv("Day48-catching-errors/nato_phonetic_alphabet.csv")
+data = pandas.read_csv("Day48-catching-errors/Nato_alphabet_v2/nato_phonetic_alphabet.csv")
 
 phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
 print(phonetic_dict)
